@@ -13,11 +13,11 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     List<Product> findByTitleContainingIgnoreCase(String titlePart);
 
     @Query("""
-    SELECT p FROM Product p
-    WHERE LOWER(p.title) LIKE LOWER(CONCAT('%', :text, '%'))
-       OR LOWER(p.description) LIKE LOWER(CONCAT('%', :text, '%'))
-       OR LOWER(p.productInfo) LIKE LOWER(CONCAT('%', :text, '%'))
-    """)
+            SELECT p FROM Product p
+            WHERE LOWER(p.title) LIKE LOWER(CONCAT('%', :text, '%'))
+               OR LOWER(p.description) LIKE LOWER(CONCAT('%', :text, '%'))
+               OR LOWER(p.productInfo) LIKE LOWER(CONCAT('%', :text, '%'))
+            """)
     List<Product> searchByText(@Param("text") String text);
 
     /*
@@ -40,7 +40,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     page.getContent().forEach(p -> System.out.println(p.getTitle()));
 }
      */
-
 
 
 }
