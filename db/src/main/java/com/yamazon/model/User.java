@@ -1,24 +1,25 @@
-package com.yamazon.entities;
+package com.yamazon.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "role")
+@Table(name = "users")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
-public class Role {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id")
-    private Long userId;
+    @Column(name = "user_name")
+    private String userName;
 
-    @Column(name = "role_name")
-    private String roleName;
+    private String email;
+    private String password;
+
 }

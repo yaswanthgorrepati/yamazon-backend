@@ -1,25 +1,25 @@
-package com.yamazon.entities;
+package com.yamazon.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "cart")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
-public class User {
+public class Cart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_name")
-    private String userName;
+    @Column(name = "user_id")
+    private Long userId;
 
-    private String email;
-    private String password;
+    @Column(name = "total_item_count")
+    private Integer totalItemCount;
 
 }

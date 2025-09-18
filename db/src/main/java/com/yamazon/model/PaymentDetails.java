@@ -1,4 +1,4 @@
-package com.yamazon.entities;
+package com.yamazon.model;
 
 import jakarta.persistence.*;
 import lombok.*;

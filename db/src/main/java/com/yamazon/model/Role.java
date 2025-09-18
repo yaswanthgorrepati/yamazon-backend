@@ -1,17 +1,17 @@
-package com.yamazon.entities;
+package com.yamazon.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "cart")
+@Table(name = "role")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
-public class Cart {
+public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,7 +19,6 @@ public class Cart {
     @Column(name = "user_id")
     private Long userId;
 
-    @Column(name = "total_item_count")
-    private Integer totalItemCount;
-
+    @Column(name = "role_name")
+    private String roleName;
 }

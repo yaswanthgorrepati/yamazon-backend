@@ -1,17 +1,17 @@
-package com.yamazon.entities;
+package com.yamazon.model;
 
 import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "cart_item")
+@Table(name = "review")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
-public class CartItem {
+public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -19,10 +19,12 @@ public class CartItem {
     @Column(name = "product_id")
     private Long productId;
 
-    @Column(name = "cart_id")
-    private Long cartId;
+    @Column(name = "user_name")
+    private String userName;
 
-    private Integer count;
+    @Column(columnDefinition = "text")
+    private String comment;
 
-
+    @Column(name = "rating_id")
+    private Long ratingId;
 }
